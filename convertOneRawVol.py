@@ -37,7 +37,7 @@ def main(f):
 			if entry.endswith(".par"): # recon parameter file
 				print("par file found:", entry)
 				copyfile(os.path.join(dirpath_origin,acquisition_dir,entry),os.path.join(dirpath_export,acquisition_dir,entry))
-			if entry.endswith("slice.vol"): # recon volume
+			if entry.endswith(".vol"): # recon volume
 				print("vol file found:", entry)
 				data = np.fromfile(os.path.join(dirpath_origin,acquisition_dir,entry),dtype=np.dtype('<f4'))
 				data = (data-intensity_range_origin[0]) / (intensity_range_origin[1]-intensity_range_origin[0]) * ((intensity_range_export[1]-intensity_range_export[0])) + intensity_range_export[0]
