@@ -14,7 +14,7 @@ def main(f):
 	#     intensity_range_origin -- bounds of the 32-bit floating point intensity in raw images
 	#     intensity_range_export -- bounds of the 16-bit unsigned integer intensity in raw images
 	#     dirs_to_skip -- acquisition folders to skip from export
-	dirpath_origin = './'
+	dirpath_origin = ''
 	dirpath_export = 'raw_uint16_to_go' # -- see below --
 	dirpath_export = os.path.join(dirpath_origin,dirpath_export) # the folder to export to will be relative to the main folder
 	intensity_range_origin[0] = 0.1
@@ -55,6 +55,9 @@ parser = argparse.ArgumentParser(
                     epilog='convertOneRawVol')
 					
 parser.add_argument('filename')
+
+#parser.add_argument('-m','--min',dest="min_out",type=float)
+#parser.add_argument('-M','--max',dest="max_out",type=float)
 
 args = parser.parse_args()
 
